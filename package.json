@@ -15,5 +15,20 @@
     "mongoose": "^4.7.7",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "main": "app.js",
+  "bin": {
+    "solution-code": "seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Not-A-Sith-Lord/mongoose-movies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Not-A-Sith-Lord/mongoose-movies/issues"
+  },
+  "homepage": "https://github.com/Not-A-Sith-Lord/mongoose-movies#readme",
+  "description": ""
 }
