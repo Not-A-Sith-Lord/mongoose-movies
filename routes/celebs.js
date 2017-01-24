@@ -43,10 +43,28 @@ router.get("/celebs/:id/edit", (req, res, next) => {
 
 });
 
+
+router.post('/celebs/:id', (req, res, next) => {
+  const updatedCeleb = {
+    name: req.body.name,
+    occupation: req.body.occupation,
+    catchPhrase: req.body.catchPhrase
+  };
+  const celebId = req.params.id;
+
+  Celebs.update({_id: celebId}, updatedCeleb, (err, something) => {
+    if (err) return next(err);
+
+    res.redirect('/');
+  });
+});
+
 router.get("/celebs/:id", (req, res, next) => {
   const celebId = req.params.id;
   console.log("I shouldn't be seeing this");
   Celebs.findById(celebId, (err, something) => {
+    if (err) return next(err);
+
     res.render("show_celeb", {
       celeb: something
     });
